@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-green shadow">
+        <div class=" bg-blue container mx-auto px-6 py-4 flex justify-between items-center">
+            <img class="h-10" src="{%static 'images/logo.png'%}" alt="Logo">
+  
+            <nav>
+                <a href="{%url 'list-blog'%}" class="text-gray-600 hover:text-gray-900 mx-4">All Blogs</a>
+                <a href="{%url 'list-my-blog'%}" class="text-gray-600 hover:text-gray-900 mx-4">My Blogs</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="container mx-auto px-6 py-10">
+        <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            {% if blog.BlogImage %}
+            <img class="w-full h-64 object-cover" src="{{ blog.BlogImage.url }}" alt="Blog Post Image">
+        {% else %}
+            <img class="w-full h-64 object-cover" src="{% static 'images/default-image.png' %}" alt="Blog Post Image">
+        {% endif %}
+            <div class="p-6">
+                <!-- Blog Title -->
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">{{blog.Title}}</h2>
+
+                <!-- Blog Meta Information -->
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-sm text-gray-600">By <a href="#" class="text-blue-500 hover:underline">{{author}}
+            </a></p>
+                    <p class="text-sm text-gray-600">Published on {{blog.CreatedDate}}</p>
+                </div>
+
+                
+                <div class="text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">{{blog.Description|safe}}</p>
+                </div>
+
+                <div class="mt-6">
+                    <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">#{{blog.Tags}}</span>
+                </div>
+
+                <!-- Share & Comments -->
+                <div class="mt-8 flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-facebook"></i> Share</a>
+                        <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-twitter"></i> Tweet</a>
+                    </div>
+                    <a href="#comments" class="text-gray-600 hover:text-blue-500">View Comments (3)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="comments" class="container mx-auto px-6 py-10">
+        <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-6">Comments</h3>
+
+
+            <div class="mb-4">
+                <p class="text-sm text-gray-600">By <a href="#" class="text-blue-500 hover:underline">User1</a> on
+                    October 7, 2024</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Great post! I really enjoyed</p>
+            </div>
+
+            <div class="mb-4">
+                <p class="text-sm text-gray-600">By <a href="#" class="text-blue-500 hover:underline">User2</a> on
+                    October 6, 2024</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Thanks for sharing. I found this very helpful!</p>
+            </div>
+
+            <form class="mt-6">
+                <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" rows="4"
+                    placeholder="Add a comment..."></textarea>
+                <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Post Comment</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 py-6 mt-10">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 My Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <a href="{% url 'create-blog' %}" class="px-5 py-3 bg-violet-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200">
+        Add New Blog
+    </a>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">My Blogs</h1>
+        
+
+        <div id="blogList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           
+        </div>
+
+
+        <div id="message" class="text-center text-red-500 mt-4"></div>
+        <div id="paginationControls"></div>
+
+    </div>
+
+    <script src="{% static 'js/mybloglist.js' %}"></script>
+    {% endblock content %}
