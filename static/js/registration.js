@@ -16,7 +16,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             document.getElementById('message').textContent = 'Account created successfully';
             document.getElementById('message').classList.remove('text-red-500');
             document.getElementById('message').classList.add('text-green-500');
-            window.location.href = '';
+            window.location.href = 'http://15.206.89.205/';
         } else {
             document.getElementById('message').textContent = data.message || 'Failed to create account';
         }
