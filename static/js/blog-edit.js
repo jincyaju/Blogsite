@@ -68,5 +68,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.error('Error:', error);
             document.getElementById('message').textContent = 'Error occurred. Please try again.';
         }
+        finally {
+            // Hide loading indicator
+            document.getElementById('loading').style.display = 'none';
+        }
     });
 });
