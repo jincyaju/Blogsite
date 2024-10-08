@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api-blog/UserLogin/', {
+        const response = await fetch('http://15.206.89.205/api-blog/UserLogin/', {
             method: 'POST',
             headers: {
                 
@@ -36,7 +36,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         
         document.getElementById('message').textContent = 'Login successful';
         
-        window.location.href = 'http://127.0.0.1:8000/list-blog' ;
+        window.location.href = 'http://15.206.89.205/list-blog' ;
     } catch (error) {
         console.error('Error:', error); 
         document.getElementById('message').textContent = 'Error occurred. Please check the console for more details.';

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Fetch the blog data and prefill the form
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api-blog/BlogApiById/${blogId}`);
+        const response = await fetch(`http://15.206.89.205/api-blog/BlogApiById/${blogId}`);
         const blogData = await response.json();
 
         if (response.ok) {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api-blog/BlogApi/`, {
+            const response = await fetch(`http://15.206.89.205/api-blog/BlogApi/`, {
                 method: 'PUT',
                 body: formData,
             });

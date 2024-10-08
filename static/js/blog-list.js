@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api-blog/BlogApi/', {
+        const response = await fetch('http://15.206.89.205/api-blog/BlogApi/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

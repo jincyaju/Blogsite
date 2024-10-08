@@ -20,7 +20,7 @@ document.getElementById('blogCreateForm').addEventListener('submit', async funct
     console.log(formData);
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api-blog/BlogApi/`, {
+        const response = await fetch(`http://15.206.89.205/api-blog/BlogApi/`, {
             method: 'POST',
             body: formData,
         });

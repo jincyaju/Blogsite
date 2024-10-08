@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const blogId = getBlogIdFromPath();
     
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api-blog/BlogApiById/${blogId}`);
+        const response = await fetch(`http://15.206.89.205/api-blog/BlogApiById/${blogId}`);
         const blogData = await response.json();
         
     } catch (error) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         
         if (confirmDelete) {
             try {
-                const deleteResponse = await fetch(`http://127.0.0.1:8000/api-blog/BlogApiById/${blogId}`, {
+                const deleteResponse = await fetch(`http://15.206.89.205/api-blog/BlogApiById/${blogId}`, {
                     method: 'DELETE',
                 });
 

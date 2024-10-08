@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     let previousUrl = null;
 
     // Initial call to fetch the first page of blogs
-    await fetchBlogs(`http://127.0.0.1:8000/api-blog/ListBlogbyUserId/${userId}`);
+    await fetchBlogs(`http://15.206.89.205/api-blog/ListBlogbyUserId/${userId}`);
 
     // Fetch blogs function with dynamic URL
     async function fetchBlogs(url) {

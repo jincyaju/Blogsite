@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     try {
         // Fetch customer data by userId
-        const response = await fetch(`http://127.0.0.1:8000/api-blog/CustomerApiById/${userId}`);
+        const response = await fetch(`http://15.206.89.205/api-blog/CustomerApiById/${userId}`);
         const customerData = await response.json();
 
         if (response.ok) {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         try {
             // Update the customer profile with PUT request
-            const response = await fetch(`http://127.0.0.1:8000/api-blog/CustomerApi/`, {
+            const response = await fetch(`http://15.206.89.205/api-blog/CustomerApi/`, {
                 method: 'PUT',
                 body: formData,
             });

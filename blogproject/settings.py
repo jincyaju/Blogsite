@@ -99,10 +99,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'dj_db_conn_pool.backends.mysql',
         'NAME': 'blog_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        # 'USER': 'python_user',
-        # 'PASSWORD': 'Kq#oCWJN0sAR',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        'USER': 'bloguser',
+        'PASSWORD': 'bloguser',
         'HOST': 'localhost',
         'PORT': '3306',
         'POOL_OPTIONS' : {
