@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Detail Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header Section -->
-    <header class="bg-green shadow">
-        <div class=" bg-blue container mx-auto px-6 py-4 flex justify-between items-center">
+    <header class="bg-[#FF885B] shadow">
+        <div class=" bg-[#384B70] container mx-auto px-6 py-4 flex justify-between items-center">
             <img class="h-10" src="{%static 'images/logo.png'%}" alt="Logo">
   
             <nav>
@@ -35,7 +36,7 @@
                 <!-- Blog Title -->
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">{{blog.Title}}</h2>
 
-                <!-- Blog Meta Information -->
+                
                 <div class="flex justify-between items-center mb-4">
                     <p class="text-sm text-gray-600">By <a href="#" class="text-blue-500 hover:underline">{{author}}
             </a></p>
@@ -48,16 +49,16 @@
                 </div>
 
                 <div class="mt-6">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">#{{blog.Tags}}</span>
+                    <span class="inline-block bg-[#384B70] text-blue-800 text-sm px-3 py-1 rounded-full">#{{blog.Tags}}</span>
                 </div>
 
-                <!-- Share & Comments -->
+                
                 <div class="mt-8 flex justify-between items-center">
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-facebook"></i> Share</a>
                         <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-twitter"></i> Tweet</a>
                     </div>
-                    <a href="#comments" class="text-gray-600 hover:text-blue-500">View Comments (3)</a>
+                    <a href="#comments" class="text-gray-600 hover:text-blue-500">View Comments (2)</a>
                 </div>
             </div>
         </div>
@@ -84,7 +85,7 @@
             <form class="mt-6">
                 <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" rows="4"
                     placeholder="Add a comment..."></textarea>
-                <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-green-600">Post Comment</button>
+                <button class="mt-2 px-4 py-2 bg-[#384B70] text-white rounded-lg hover:bg-[#FF885B]">Post Comment</button>
             </form>
         </div>
     </section>

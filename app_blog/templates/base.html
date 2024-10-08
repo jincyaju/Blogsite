@@ -7,63 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog List</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
 </head>
 
-<body class="bg-violet-100">
+<body class="bg-[#FF885B]-100">
     <div class="min-h-screen flex flex-col">
 
         <!-- Header -->
-        <header class="bg-green shadow">
+        <header class="bg-[#FF885B] shadow">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center space-x-4">
-                    <img class="h-10" src="{%static 'images/logo.png'%}" alt="Logo">
-                   
+                    <img class="h-10" src="{% static 'images/logo.png' %}" alt="Logo">
                 </div>
+
+                <ul class="space-y-4">
+                    <li class="nav-item">
+                        <a href="{% url 'app_blog:logout' %}" class="flex items-center space-x-2 text-white-700 hover:text-blue-500">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            
+                        </a>
+                    </li>
+                    </ul>
             </div>
+            
         </header>
 
+
         <!-- Main layout -->
-        <div class="flex flex-1">
+        <div class="flex flex-1 flex-col md:flex-row">
 
             <!-- Sidebar -->
-            <nav class="w-64 shadow-lg bg-green-100">
+            <nav class="w-full md:w-64 shadow-lg bg-[#384B70] text-white">
+
+
                 <div class="p-6">
                     <ul class="space-y-4">
                         <li class="nav-item">
-                            <a href="{%url 'list-blog'%}" class="flex items-center space-x-2 text-gray-700 hover:text-blue-500 ">
-                                <i class="fas fa-dashboard"></i>
+                            <a href="{% url 'list-blog' %}" class="flex items-center space-x-2 text-white-700 hover:text-blue-500">
+                                <i class="fa-solid fa-newspaper"></i>
                                 <span>All Blogs</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{%url 'list-my-blog'%}" class="flex items-center space-x-2 text-gray-700 hover:text-blue-500">
-                                <i class="fas fa-dashboard"></i>
-                                <span>My Blogs</span>{{user.user_id}}
+                            <a href="{% url 'list-my-blog' %}" class="flex items-center space-x-2 text-white-700 hover:text-blue-500">
+                                <i class="fa-solid fa-blog"></i>
+                                <span>My Blogs</span>{{ user.user_id }}
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a href="" id="myAccountUrl" class="flex items-center space-x-2 text-gray-700 hover:text-blue-500">
-                                <i class="fas fa-dashboard"></i>
-                                <span>My Account</span>
+                            <a href="" id="myAccountUrl" class="flex items-center space-x-2 text-white-700 hover:text-blue-500">
+                                <i class="fa-solid fa-user"></i>
+                                <span>My Profile</span>
                             </a>
                         </li>
-                        
-                        
+
                         <li class="nav-item">
-                            <a href="{% url 'app_blog:logout' %}" class="flex items-center space-x-2 text-gray-700 hover:text-blue-500">
+                            <a href="{% url 'app_blog:logout' %}" class="flex items-center space-x-2 text-white-700 hover:text-blue-500">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span>Logout</span>
                             </a>
                         </li>
-                        
                     </ul>
                 </div>
             </nav>
 
-            <!-- Content Wrapper -->
+           
             <main class="flex-1 bg-gray-50 p-6">
                 <div class="container mx-auto">
                     {% block content %}
@@ -73,21 +85,24 @@
             </main>
         </div>
     </div>
+
     <script>
         // Check if user_id exists in localStorage
         const userId = localStorage.getItem('user_id');
-    
+
         if (userId) {
             // Get the element for the My Account link
             const myAccountLink = document.getElementById('myAccountLink');
             const myAccountUrl = document.getElementById('myAccountUrl');
-    
+
             // Update the link's href to point to the user's edit-profile page
             myAccountUrl.href = `/edit-profile/${userId}/`;
-    
+
             // Show the link
             myAccountLink.style.display = 'block';
         }
+
+
     </script>
 </body>
 

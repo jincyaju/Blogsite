@@ -6,25 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-        <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
-        <form id="loginForm" class="space-y-4">
-            <div>
-                <label for="username" class="block text-sm font-medium text-gray-700">Username or Email</label>
-                <input type="text" id="username" name="username" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
-            </div>
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
-            </div>
-            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Login</button>
-            <p class="text-sm text-center">Don't have an account? <a href="{% url 'user-register' %}" id="show-signup" class="text-indigo-600 hover:underline">Sign Up</a></p>
-        </form>
-        <p id="message" class="mt-4 text-center text-red-500"></p>
+<body class="flex flex-col md:flex-row h-screen">
+   
+    <div class="hidden md:block w-1/2 bg-cover bg-center" style="background-image: url('/static/images/login-1.svg');">
+       
+       
+    </div>
+
+    
+    <div class="w-full md:w-1/2 bg-gray-100 flex justify-center items-center">
+        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#384B70]">
+            <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username or Email</label>
+                    <input type="text" id="username" name="username" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                   
+                </div>
+                <button type="submit" class="w-full bg-[#384B70] text-white py-2 px-4 rounded-md hover:bg-[#FF885B]">Login</button>
+                <p class="text-sm text-center">Don't have an account? <a href="{% url 'user-register' %}" id="show-signup" class="text-indigo-600 hover:underline">Sign Up</a></p>
+            </form>
+            <p id="message" class="mt-4 text-center text-red-500"></p>
+        </div>
     </div>
 
     <script src="{% static 'js/login.js' %}"></script>
+   
 </body>
 </html>

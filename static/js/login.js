@@ -1,3 +1,4 @@
+
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
     e.preventDefault(); 
 
@@ -36,9 +37,12 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         
         document.getElementById('message').textContent = 'Login successful';
         
-        window.location.href = 'http://15.206.89.205/list-blog' ;
+        window.location.href = '/list-blog' ;
     } catch (error) {
         console.error('Error:', error); 
         document.getElementById('message').textContent = 'Error occurred. Please check the console for more details.';
     }
+
+    
 });
+
